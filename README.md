@@ -3,22 +3,59 @@
 Liza Berfin İnce
 30719
 
-### Project Idea
-This project is my Data Science (DSA 210 - Introduction to Data Science) term assignment for the fall semester of 2024-2025. My primary goal is to analyze the relationship between my daily physical activity, represented by step count data, and my engagement on Instagram. The objective is to uncover potential patterns or correlations between these two aspects of my lifestyle. By exploring this relationship, I aim to understand how my digital habits influence my physical behavior and vice versa. Through this process, I will also conduct a thorough examination of the basic statistical properties and underlying patterns of both datasets.
+### Motivation
+This project stems from my curiosity about how my digital habits, particularly Instagram engagement, relate to my physical activity. By analyzing these two aspects of my lifestyle, I aim to uncover patterns or correlations that could offer insights into how one influences the other. Additionally, this project serves as an opportunity to apply data science techniques to real-world data, helping me refine my skills in data cleaning, analysis, and machine learning.
 
-### Dataset
-The Instagram data was downloaded directly from the platform in JSON format. It includes detailed logs of my activity, such as likes, comments, and shares timestamps. For this project, I will preprocess the data to retain only the dates and total interaction counts, creating a simplified structure for analysis. My Apple Health step count data was exported as a CSV file from Apple’s Health Application. It contains daily records of the number of steps I took. Both datasets cover the same periods and will be aligned by date for comparative analysis.
+### Data Source
+**1) Step Count Data:** This dataset was exported from the Apple Health app, which automatically tracks physical activity using sensors on my device. It includes daily step counts over a defined time period and was exported as a CSV file for analysis. Only the necessary columns were retained to focus on the key metrics of physical activity.
 
-### Plan
-Data Cleaning and Preparation:
-The first step in this project involves cleaning and preparing both datasets. For the Instagram data, I will convert the JSON file into a CSV format for easier processing. I will remove unnecessary columns and ensure that missing or duplicated records are appropriately handled. Once cleaned, the datasets will be merged based on their shared date field, enabling a cohesive analysis.
+**2) Instagram Engagement Data:** This dataset was downloaded directly from Instagram in JSON format. It contains detailed logs of interaction such as likes. The raw data was preprocessed to retain daily totals of interactions, simplifying the dataset while preserving its essential information.
 
-Correlation Analysis:
-To explore the relationship between Instagram engagement and physical activity, I will conduct a correlation analysis. This involves calculating statistical metrics to determine whether significant shifts in step counts correspond to changes in Instagram interaction levels. The analysis will help uncover potential trends or patterns between the two datasets.
+Both datasets were aligned to cover the same time period, enabling a cohesive and comparative analysis to explore the relationship between physical and digital behaviors.
 
-Exploratory Data Analysis (EDA) and Visualization:
-To gain insights into the data, I will perform exploratory data analysis (EDA). This will include calculating descriptive statistics such as averages, medians, and ranges for both datasets. Visualization techniques, such as scatterplots and line charts, will be used to highlight trends and relationships. Additionally, I will compare activity patterns across different conditions, such as weekdays versus weekends and high-activity versus low-activity periods, to identify meaningful distinctions.
+### Data Analysis
+**1) Data Cleaning and Preparation:**
 
-Machine Learning:
-I'll attempt to use machine learning techniques to examine the relationship between Instagram interaction patterns and physical activity. Models will be developed to investigate patterns and make predictions based on the data. The performance of these models will be evaluated, and areas for improvement will be identified for future exploration.
+- For the Instagram data:
+Converted the JSON file into CSV format for easier manipulation and analysis.
+Removed unnecessary fields and ensured all missing or duplicated records were handled.
+
+- For the step count data:
+Verified the integrity of the dataset, ensuring there were no gaps or inconsistencies in daily step counts.
+The two datasets were merged based on their shared Date field to allow direct comparison of daily metrics.
+
+**2) Correlation Analysis:**
+
+- Used statistical correlation metrics (e.g., Pearson correlation coefficient) to explore the relationship between daily step counts and Instagram engagement levels.
+- Investigated patterns where increases or decreases in one variable corresponded to changes in the other.
+
+**3) Exploratory Data Analysis (EDA) and Visualization:**
+- Computed descriptive statistics, such as means, medians, ranges, and standard deviations, to summarize both datasets.
+- Created scatterplots, line graphs, and heatmaps to visually identify trends and patterns.
+- Compared activity levels across different contexts, such as weekdays vs. weekends and high-activity vs. low-activity days.
+
+**4) Machine Learning:**
+- Applied linear regression to predict step counts based on Instagram engagement and temporal features like day of the week.
+- Used clustering techniques, such as K-Means, to group days with similar behaviors in terms of activity and engagement.
+- Evaluated model performance using metrics like Mean Squared Error (MSE) and R² to assess predictive power.
+
+### Findings
+
+**Physical and Digital Interaction:**
+- There were noticeable patterns where high Instagram engagement days coincided with lower physical activity, suggesting that increased time spent on social media might reduce opportunities for movement.
+- Conversely, days with higher step counts often showed reduced Instagram interactions, potentially indicating busier schedules or activities that prioritized physical over digital engagement.
+
+**Temporal Patterns:**
+- Weekends tended to have higher Instagram activity but lower step counts, reflecting possible relaxation or leisure-focused behaviors.
+- Weekdays exhibited a more balanced trend, with moderate step counts and Instagram engagement.
+  
+**Correlation Insights:**
+- A moderate negative correlation was observed between Instagram engagement and step counts, highlighting a potential inverse relationship. However, this correlation varied across specific time periods, suggesting that other factors might also influence these behaviors.
+
+### Limitations and Future Works
+**- Limitations:**
+I could not obtain detailed Instagram usage time data. As a result, the analysis was conducted at a daily level, which limits the ability to capture how Instagram engagement and physical activity interact throughout the day. Intra-day patterns, such as specific times of heightened activity or engagement, were not explored.  Since this data is specific to my own habits, the results are personal and may not be applicable to a wider audience without additional data from other individuals. 
+
+**- Future Work:**
+To provide a more comprehensive analysis, incorporating additional metrics such as Instagram screen time, app usage logs, or fitness data like distance walked and calories burned would enhance the depth of the study. Exploring time-of-day patterns could reveal how Instagram engagement fluctuates alongside physical activity throughout the day, offering insights into intra-day behavioral trends. Advanced techniques, such as experimenting with deep learning models like LSTMs or GRUs, could help capture temporal dependencies within the data, while classification models might predict whether a day is likely to be "high engagement" or "low engagement" based on features like step count. Expanding the analysis to include data from multiple individuals would uncover broader trends and provide a more generalizable understanding of the relationship between digital engagement and physical activity. Ultimately, these findings could be used to develop actionable recommendations for achieving a healthier balance between digital and physical activities.
 
